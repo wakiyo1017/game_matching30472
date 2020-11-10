@@ -2,9 +2,9 @@
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
       <h2>Edit Account</h2>
-      <h5>アカウントの編集</h5>
+      <h5>アカウント情報の変更</h5>
       <%= link_to "ログアウト", "#", class: 'btn'%>
-      <%= link_to "チャットページに戻る", :back, class: 'btn'%>
+      <%= link_to "マイページに戻る", user_path(current_user), class: 'btn'%>
     </div>
     <div class='account-page__inner--right user-form'>
       <%= form_with model: current_user, local: true do |f|%>
@@ -22,6 +22,38 @@
           </div>
           <div class='field-input'>
             <%= f.email_field :email%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :character_killer %>
+          </div>
+          <div class='field-input'>
+            <%= f.collection_select(:character_killer_id, CharacterKiller.all, :id, :name, {}, {class:"character-select"}) %>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :character_survivor %>
+          </div>
+          <div class='field-input'>
+            <%= f.collection_select(:character_survivor_id, CharacterSurvivor.all, :id, :name, {}, {class:"character-selevt"}) %>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :play_time %>
+          </div>
+          <div class='field-input'>
+            <%= f.collection_select(:play_time_id, PlayTime.all, :id, :name, {}, {class:"character-select"})%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :self_info%>
+          </div>
+          <div class='field-input'>
+            <%= f.text_area :self_info%>
           </div>
         </div>
         <div class='actions'>

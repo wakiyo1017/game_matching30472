@@ -29,8 +29,13 @@
 
 .side-body {
   background-color: darkgray;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 100px - 90px);
   padding: 40px 20px 0 30px;
+}
+
+.side-bottom {
+  height: 90px;
+  background-color: gray;
 }
 
 
@@ -42,15 +47,70 @@
 .main-header {
   height: 100px;
   padding: 0 40px;
+  display: flex;
+  align-items: center;
 }
-.recruit {
+.form-input{
+  background-color: white;
+  height: 50px;
+  width: 100%;
+}
+.form-search{
+  border: none;
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+.form-submit{
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+
+.recruits {
   background-color: lightgray;
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0 40px;
+  overflow: scroll;
 }
+.recruit {
+  margin: 15px 0 0 0;
+}
+.upper-recruit{
+  display: flex;
+}
+.recruit-title {
+  font-size: 24px;
+}
+
+.lower-recruit {
+  margin-top: 5px;
+  display: flex;
+}
+.recruit-user {
+  font-size: 18px;
+  padding-left: 150px;
+  margin-bottom: 30px;
+}
+.recruit-date {
+  color: gray;
+  font-size: 10p;
+  padding-left: 15px;
+}
+
+
+
 .form {
-  background-color: gray;
+  background-color: darkgray;
   height: 90px;
   padding: 20px 0;
   padding: 0 40px;
+}
+
+.input-play-day {
+  display: flex;
 }

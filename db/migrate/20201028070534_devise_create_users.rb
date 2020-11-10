@@ -4,6 +4,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users do |t|
       t.string :name, null: false
+      t.integer :character_killer_id
+      t.integer :character_survivor_id
+      t.integer :play_time_id
+      t.text :self_info
       
       ## Database authenticatable
       t.string :email,              null: false, default: ""

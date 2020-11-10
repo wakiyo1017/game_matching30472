@@ -1,20 +1,23 @@
 <div class="side-bar-header">
   <div class="header-name">
     <% if user_signed_in? %>
-      <%= link_to "hoge", "#" %>
+      <%= link_to current_user.name, user_path(current_user)  %>
     <% else %>
       <p>ゲストさん</p>
     <% end %>
   </div>
   <div class="create-recruit">
-    <%= link_to "募集する", "#" %>
+    <%= link_to "募集する", new_playing_path %>
   </div>
 </div>
 
 <div class="side-body">
   <% if user_signed_in? %>
   <div class="side-category">
-    <%= link_to "ログアウト", "#" %>
+    <%= link_to "マイページ", user_path(current_user) %>
+  </div>
+  <div class="side-category">
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn" %>
   </div>
   <% else %>
   <div class="side-category">
@@ -24,5 +27,7 @@
     <%= link_to "ログイン", user_session_path %>
   </div>
   <% end %>
+</div>
 
+<div class="side-bottom">
 </div>

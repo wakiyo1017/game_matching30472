@@ -1,0 +1,35 @@
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>Recuitment</h2>
+      <h5>募集詳細</h5>
+      <%= link_to "トップページに戻る", root_path, class: 'btn'%>
+    </div>
+    <div class='account-page__inner--right user-form'>
+        <div class='field'>
+          <div class='field-label'>
+            募集タイトル： 
+            <%= @playing.title %>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            遊ぶ日時：
+            <%= @playing.play_day %>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            こんな事しませんか！！：
+            <%= @playing.rule %>
+          </div>
+        </div>
+         <div class='field'>
+          <div class='field-label'>
+            募集人：
+            <%= @playing.user.name %>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

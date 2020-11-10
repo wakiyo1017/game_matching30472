@@ -1,0 +1,29 @@
+<%= form_with(model: playing, local: true) do |f|%>
+  <div class="field">
+    <%= f.label :title, "募集タイトル" %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :rule, "募集内容" %><br />
+    <%= f.text_area :rule, class: :form__text %>
+  </div>
+  <div class="field">
+    <%= f.label :play_day, "遊べる日時" %><br />
+    <div class='input-play-day'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :play_day,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 1930,
+                    end_year: (Time.now.year - 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit "保存する", class: "btn"  %>
+  </div>
+<% end %>

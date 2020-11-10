@@ -3,7 +3,7 @@
     <%= render "side_bar" %>
   </div>
   <div class="playing">
-    <%= render "main_playing" %>
+    <%= render partial: "main_playing", locals: { playings: @playings } %>
   </div>
 </div>
 

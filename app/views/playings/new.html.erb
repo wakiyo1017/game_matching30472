@@ -1,0 +1,13 @@
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>New Recruiting</h2>
+      <h5>募集を作成して一緒に遊べる人を探そう！</h5>
+      <%= link_to "戻る", root_path, class: 'btn'%>
+    </div>
+    <div class='account-page__inner--right user-form'>
+      <%# 部分テンプレートでフォームを表示する %>
+      <%= render partial: "form", locals: { playing: @playing } %>
+    </div>
+  </div>
+</div>

@@ -1,9 +1,32 @@
 <div class="main-header">
-<p>検索フォームを作る</p>
+  <div class="form-input">
+    <input class="form-search" placeholder="募集を探す">
+  </div>
+  <input class="form-submit" type="submit" value="検索">
 </div>
 
-<div class="recruit">
-<p>募集一覧を表示する</p>
+<div class="recruits">
+<p>＜＜募集一覧＞＞</p>
+  
+  <% playings.each do |playing| %>
+  <div class="recruit">
+    <div class="upper-recruit">
+      <div class="recruit-title">
+        <%= link_to playing.title, playing_path(playing.id) %>
+      </div>
+    </div>
+    <div class="lower-recruit">
+      <div class="recruit-user">
+        <%= link_to playing.user.name, user_path(playing.user_id) %>
+      </div>
+      <div class="recruit-date">
+        <%= playing.play_day %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  
+
 </div>
 
 <div class="form">

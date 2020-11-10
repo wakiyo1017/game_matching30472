@@ -65,11 +65,10 @@ Things you may want to cover:
 ## playingテーブル
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
-| name     | string     | null: false                    |
+| title    | string     | null: false                    |
 | rule     | text       | null: false                    |
 | play_day | date       | null: false                    |
 | user     | references | null: false, foreign_key: true |
-| title    | text       | null: false,                   |
 
 ### Association
 - belongs_to :user
